@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: com.lauracercas.moviecards.endtoendtest.IndexE2ETest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.054 s <<< FAILURE! - in com.lauracercas.moviecards.endtoendtest.IndexE2ETest
+tesLinks  Time elapsed: 0.029 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created
+from unknown error: cannot find Chrome binary
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-JI5NALH', ip: '192.168.108.115', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 	GetHandleVerifier [0x00007FF701B26CC5+28821]
+	(No symbol) [0x00007FF701A93850]
+	(No symbol) [0x00007FF70193578A]
+	(No symbol) [0x00007FF70196DA38]
+	(No symbol) [0x00007FF70196BAC9]
+	(No symbol) [0x00007FF7019BA4FA]
+	(No symbol) [0x00007FF7019B9B30]
+	(No symbol) [0x00007FF7019AF0A3]
+	(No symbol) [0x00007FF70197A778]
+	(No symbol) [0x00007FF70197B8E1]
+	GetHandleVerifier [0x00007FF701E5FCCD+3408029]
+	GetHandleVerifier [0x00007FF701E7743F+3504143]
+	GetHandleVerifier [0x00007FF701E6B61D+3455469]
+	GetHandleVerifier [0x00007FF701BEBDCB+835995]
+	(No symbol) [0x00007FF701A9EB6F]
+	(No symbol) [0x00007FF701A9A824]
+	(No symbol) [0x00007FF701A9A9BD]
+	(No symbol) [0x00007FF701A8A1A9]
+	BaseThreadInitThunk [0x00007FFDA5337374+20]
+	RtlUserThreadStart [0x00007FFDA663CC91+33]
+
+	at com.lauracercas.moviecards.endtoendtest.IndexE2ETest.setUp(IndexE2ETest.java:33)
+
+testTitles  Time elapsed: 0.025 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created
+from unknown error: cannot find Chrome binary
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-JI5NALH', ip: '192.168.108.115', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 	GetHandleVerifier [0x00007FF701B26CC5+28821]
+	(No symbol) [0x00007FF701A93850]
+	(No symbol) [0x00007FF70193578A]
+	(No symbol) [0x00007FF70196DA38]
+	(No symbol) [0x00007FF70196BAC9]
+	(No symbol) [0x00007FF7019BA4FA]
+	(No symbol) [0x00007FF7019B9B30]
+	(No symbol) [0x00007FF7019AF0A3]
+	(No symbol) [0x00007FF70197A778]
+	(No symbol) [0x00007FF70197B8E1]
+	GetHandleVerifier [0x00007FF701E5FCCD+3408029]
+	GetHandleVerifier [0x00007FF701E7743F+3504143]
+	GetHandleVerifier [0x00007FF701E6B61D+3455469]
+	GetHandleVerifier [0x00007FF701BEBDCB+835995]
+	(No symbol) [0x00007FF701A9EB6F]
+	(No symbol) [0x00007FF701A9A824]
+	(No symbol) [0x00007FF701A9A9BD]
+	(No symbol) [0x00007FF701A8A1A9]
+	BaseThreadInitThunk [0x00007FFDA5337374+20]
+	RtlUserThreadStart [0x00007FFDA663CC91+33]
+
+	at com.lauracercas.moviecards.endtoendtest.IndexE2ETest.setUp(IndexE2ETest.java:33)
+
