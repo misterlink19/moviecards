@@ -26,16 +26,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: pruebas
-        run: echo "pruebas"
-  
-  qa:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: calidad
-        run: echo "calidad"
-
+     
       - name: Descargar repositorio
         uses: actions/checkout@v2
       
@@ -65,7 +56,14 @@ jobs:
         
       - name: Ejecutar las pruebas unitarias, de integración y end to end
         run: mvn clean verify    
-        
+  
+  qa:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: calidad
+        run: echo "calidad"
+
   deploy:
     needs: qa
     runs-on: ubuntu-latest
