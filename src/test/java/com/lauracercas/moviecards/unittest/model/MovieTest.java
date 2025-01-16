@@ -84,6 +84,7 @@ public class MovieTest {
         Actor actorExample = new Actor(1,"Sample name");
         movie.addActor(actorExample);
         assert(movie.getActors().contains(actorExample));
+        assertEquals("Sample name", movie.getActors().get(0).getName());
     }
 
     @Test
@@ -92,6 +93,7 @@ public class MovieTest {
         Actor actorExample = new Actor(2,"Sample name");
         actorsExample.add(actorExample);
         movie.setActors(actorsExample);
+        assertEquals("Sample name", movie.getActors().get(0).getName());
         assert(movie.existActorInMovie(actorExample));
     }
 
