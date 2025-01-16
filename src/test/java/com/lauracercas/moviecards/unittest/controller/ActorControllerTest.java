@@ -87,7 +87,7 @@ class ActorControllerTest {
 
         String viewName = controller.saveActor(actorDTO, result, model);
 
-        assertEquals("actors/form", viewName);
+        assertEquals("redirect:/actors", viewName);
         assertEquals(birthDateExample, actorDTO.getBirthDate());
         assertEquals(deadDateExample, actorDTO.getDeadDate());
 
@@ -112,7 +112,7 @@ class ActorControllerTest {
 
         String viewName = controller.saveActor(actorDTO, result, model);
 
-        assertEquals("actors/form", viewName);
+        assertEquals("redirect:/actors", viewName);
         assertEquals(birthDateExample, actorDTO.getBirthDate());
         assertEquals(deadDateExample, actorDTO.getDeadDate());
 

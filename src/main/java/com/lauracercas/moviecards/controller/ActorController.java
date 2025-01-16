@@ -68,7 +68,7 @@ public class ActorController {
 
         model.addAttribute(ACTOR, actorSaved);
         model.addAttribute(TITLE, Messages.EDIT_ACTOR_TITLE);
-        return ACTORS_FORM;
+        return "redirect:/actors";
     }
 
     @GetMapping("editActor/{actorId}")

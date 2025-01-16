@@ -71,7 +71,7 @@ public class MovieController {
 
         model.addAttribute(MOVIE, movieSaved);
         model.addAttribute(TITLE, Messages.EDIT_MOVIE_TITLE);
-        return MOVIES_FORM;
+        return "redirect:/movies";
     }
 
     @GetMapping("editMovie/{movieId}")

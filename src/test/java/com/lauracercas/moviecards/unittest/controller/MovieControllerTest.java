@@ -81,7 +81,7 @@ class MovieControllerTest {
 
         String viewName = controller.saveMovie(movieDTO, result, model);
 
-        assertEquals("movies/form", viewName);
+        assertEquals("redirect:/movies", viewName);
 
         verify(model).addAttribute(eq("movie"), any(Movie.class));
         verify(model).addAttribute("title", Messages.EDIT_MOVIE_TITLE);
@@ -102,7 +102,7 @@ class MovieControllerTest {
 
         String viewName = controller.saveMovie(movieDTO, result, model);
 
-        assertEquals("movies/form", viewName);
+        assertEquals("redirect:/movies", viewName);
 
         verify(model).addAttribute(eq("movie"), any(Movie.class));
         verify(model).addAttribute("title", Messages.EDIT_MOVIE_TITLE);
