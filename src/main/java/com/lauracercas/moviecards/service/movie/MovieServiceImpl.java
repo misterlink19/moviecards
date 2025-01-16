@@ -41,8 +41,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie getMovieById(Integer movieId) {
-        Movie movie = template.getForObject(url + "/" + movieId,
-                Movie.class);
+        Movie movie = template.getForObject(url + "/" + movieId,Movie.class);
         return movie;
     }
 }
