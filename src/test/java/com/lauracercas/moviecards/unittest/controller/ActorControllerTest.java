@@ -13,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.openMocks;
 
@@ -46,7 +48,6 @@ class ActorControllerTest {
         closeable.close();
     }
 
-
     @Test
     public void shouldGoListActorAndGetAllActors() {
         List<Actor> actors = new ArrayList<>();
@@ -71,36 +72,44 @@ class ActorControllerTest {
     @Test
     public void shouldSaveActorWithNoErrors() {
         Actor actor = new Actor();
+        Date birthDateExample = new Date();
+        Date deadDateExample = new Date();
+        actor.setBirthDate(birthDateExample);
+        actor.setDeadDate(deadDateExample);
         BindingResult result = mock(BindingResult.class);
         when(result.hasErrors()).thenReturn(false);
-
         when(actorServiceMock.save(any(Actor.class))).thenReturn(actor);
 
         String viewName = controller.saveActor(actor, result, model);
 
         assertEquals("actors/form", viewName);
-
         verify(model).addAttribute("actor", actor);
         verify(model).addAttribute("title", Messages.EDIT_ACTOR_TITLE);
         verify(model).addAttribute("message", Messages.SAVED_ACTOR_SUCCESS);
+        assertEquals(birthDateExample, actor.getBirthDate());
+        assertEquals(deadDateExample, actor.getDeadDate());
     }
 
     @Test
     public void shouldUpdateActorWithNoErrors() {
         Actor actor = new Actor();
         actor.setId(1);
+        Date birthDateExample = new Date();
+        Date deadDateExample = new Date();
+        actor.setBirthDate(birthDateExample);
+        actor.setDeadDate(deadDateExample);
         BindingResult result = mock(BindingResult.class);
         when(result.hasErrors()).thenReturn(false);
-
         when(actorServiceMock.save(any(Actor.class))).thenReturn(actor);
 
         String viewName = controller.saveActor(actor, result, model);
 
         assertEquals("actors/form", viewName);
-
         verify(model).addAttribute("actor", actor);
         verify(model).addAttribute("title", Messages.EDIT_ACTOR_TITLE);
         verify(model).addAttribute("message", Messages.UPDATED_ACTOR_SUCCESS);
+        assertEquals(birthDateExample, actor.getBirthDate());
+        assertEquals(deadDateExample, actor.getDeadDate());
     }
 
     @Test
@@ -132,6 +141,5 @@ class ActorControllerTest {
         verify(model).addAttribute("movies", movies);
         verify(model).addAttribute("title", Messages.EDIT_ACTOR_TITLE);
     }
-
 
 }
