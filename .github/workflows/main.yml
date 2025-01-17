@@ -79,9 +79,9 @@ jobs:
       - name: Revisar la calidad con Sonarqube
         run: |
           mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.qualitygate.wait=true -Dsonar.login=admin -Dsonar.password=12345
-  stage:
+stage:
     runs-on: ubuntu-latest
-    needs: qa
+    needs: build
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
@@ -99,7 +99,7 @@ jobs:
           app-name: 'moviecards-pre-producción'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_99C5A58D9D4042A7A8D979AC0AC69E6D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_92DE65DE8DD946FB94716EC855183250 }}
 
   deploy:
     runs-on: ubuntu-latest
