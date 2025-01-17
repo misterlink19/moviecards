@@ -32,7 +32,13 @@
                     <td th:text="${actor.id}"></td>
                     <td th:text="${actor.name}"></td>
                     <td th:text="${#dates.format(actor.birthDate, 'dd-MM-yyyy')}"></td>
-                    <td th:text="${#dates.format(actor.deadDate, 'dd-MM-yyyy')}"></td>
+                    <td>
+                        <span th:if="${actor.deadDate == null || actor.deadDate.equals('0000-00-00')}">Sigue vivo</span>
+                        <span th:unless="${actor.deadDate == null || actor.deadDate.equals('0000-00-00')}">
+                            <span th:text="${#dates.format(actor.deadDate, 'dd-MM-yyyy')}"></span>
+                        </span>
+                    </td>
+                    
                     <td th:text="${actor.country}"></td>
                     <td>
                         <a th:href="@{'/editActor/' + ${actor.id}}" class="btn btn-primary">Editar</a>
